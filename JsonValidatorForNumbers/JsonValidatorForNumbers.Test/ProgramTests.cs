@@ -10,5 +10,13 @@ namespace JsonValidatorForNumbers.Test
         {
             Program.ValidateJSONNumber();
         }
+
+        [Fact]
+        public void FirstGreenTestMinimumImplementation()
+        {
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber();
+            Assert.Equal(expected,actual);
+        }
     }
 }
