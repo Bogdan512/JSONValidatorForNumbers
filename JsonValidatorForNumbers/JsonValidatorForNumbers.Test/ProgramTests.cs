@@ -91,5 +91,24 @@ namespace JsonValidatorForNumbers.Test
             bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected, actual);
         }
+
+
+        [Fact]
+        public void ForNumbersContainingEButNotReallyExponentialTheExpectedReturnShouldBeFalse()
+        {
+            string input = "12.123E";
+            bool expected = false;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ANumberWithNodigitsAfterTheCommaShouldBeFalse()
+        {
+            string input = "12.";
+            bool expected = false;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }

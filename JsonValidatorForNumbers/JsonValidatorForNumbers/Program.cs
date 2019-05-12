@@ -6,6 +6,13 @@ namespace JsonValidatorForNumbers
     {
         static void Main(string[] args)
         {
+            string input = Console.ReadLine();
+            bool result = ValidateJSONNumber(input);
+            if (result)
+            {
+                Console.WriteLine("Valid");
+            }
+            else Console.WriteLine("Invalid");
             Console.Read();
         }
 
@@ -14,7 +21,7 @@ namespace JsonValidatorForNumbers
             bool result = true;
             if (input[0] == '0')
             {
-                if(input[1] != '.')
+                if (input[1] != '.')
                 {
                     return false;
                 }
