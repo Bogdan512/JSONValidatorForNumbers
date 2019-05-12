@@ -19,5 +19,32 @@ namespace JsonValidatorForNumbers.Test
             bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected,actual);
         }
+
+        [Fact]
+        public void ForMinus5TheExpectedReturnShouldBeTrue()
+        {
+            string input = "-5";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void For234TheExpectedReturnShouldBeTrue()
+        {
+            string input = "234";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ForMinus123TheExpectedReturnShouldBeTrue()
+        {
+            string input = "-123";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
