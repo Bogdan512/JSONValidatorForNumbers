@@ -64,5 +64,23 @@ namespace JsonValidatorForNumbers.Test
             bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void ForExponentialNrsPlusANumberOfDigitsTheExpectedReturnShouldBeTrue()
+        {
+            string input = "12.123E+3";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ForNumbersWithScientificNotationTheExpectedReturnShouldBeTrue()
+        {
+            string input = "12.123E-2";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
