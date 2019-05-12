@@ -46,5 +46,23 @@ namespace JsonValidatorForNumbers.Test
             bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void ForCommaNrsTheExpectedReturnShouldBeTrue()
+        {
+            string input = "12.34";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ForExponentialNrsTheExpectedReturnShouldBeTrue()
+        {
+            string input = "12.123e3";
+            bool expected = true;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
