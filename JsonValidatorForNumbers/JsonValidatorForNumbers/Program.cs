@@ -9,9 +9,15 @@ namespace JsonValidatorForNumbers
             Console.Read();
         }
 
-        public static bool ValidateJSONNumber()
+        public static bool ValidateJSONNumber(string input)
         {
-            return true;
+            bool result = true;
+            if (double.TryParse(input, out double number))
+            {
+                result = true;
+            }
+            else result = false;
+            return result;
         }
     }
 }
