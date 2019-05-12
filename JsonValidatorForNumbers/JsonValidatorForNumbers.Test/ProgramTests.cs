@@ -8,14 +8,15 @@ namespace JsonValidatorForNumbers.Test
         [Fact]
         public void FirstTestWhereTheMethodIsNotImplemented()
         {
-            Program.ValidateJSONNumber();
+            Program.ValidateJSONNumber("Test");
         }
 
         [Fact]
-        public void FirstGreenTestMinimumImplementation()
+        public void For5TheExpectedReturnShouldBeTrue()
         {
+            string input = "5";
             bool expected = true;
-            bool actual = Program.ValidateJSONNumber();
+            bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected,actual);
         }
     }
