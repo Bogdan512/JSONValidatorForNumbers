@@ -12,6 +12,13 @@ namespace JsonValidatorForNumbers
         public static bool ValidateJSONNumber(string input)
         {
             bool result = true;
+            if (input[0] == '0')
+            {
+                if(input[1] != '.')
+                {
+                    return false;
+                }
+            }
             if (double.TryParse(input, out double number))
             {
                 result = true;

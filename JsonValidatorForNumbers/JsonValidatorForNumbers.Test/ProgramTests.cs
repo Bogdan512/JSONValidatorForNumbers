@@ -82,5 +82,14 @@ namespace JsonValidatorForNumbers.Test
             bool actual = Program.ValidateJSONNumber(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void ForNumbersStartingWith0TheExpectedReturnShouldBeFalse()
+        {
+            string input = "012";
+            bool expected = false;
+            bool actual = Program.ValidateJSONNumber(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
